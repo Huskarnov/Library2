@@ -1,0 +1,390 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 62.5%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    box-sizing: border-box;
+	background-color: beige;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* /////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////// */
+
+
+
+
+section{
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-content: center;
+
+    font-size: 2rem;
+    
+	font-family: "Montserrat";
+	transition: all 0.1s ease-in-out;
+	
+}
+
+nav{
+	position: sticky;
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+
+	/* width: 100%; */
+
+	padding: 20px 40px;
+	
+
+
+	background-color: #D8BE99;
+
+	z-index: 3;
+	
+	box-shadow: 2px 0 10px brown;
+}
+
+nav img{
+	height: 100px;
+	aspect-ratio:initial;
+}
+
+nav div:nth-child(2){
+	align-content: center;
+	font-weight: 800;
+	font-size: 4rem;
+
+	text-shadow:  	5px 5px 11px beige,
+					-5px -5px 11px beige;
+	
+}
+
+nav button{
+	
+	font-size: 1.5rem;
+	font-weight: 900;
+
+	
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px #3b3b35;
+	border: hidden;
+
+	height: 100px;
+	width: 100px;
+	/* padding: 5px 20px; */
+	
+	background-color: beige;
+
+	box-shadow: inset 0 0 5px brown;
+
+	user-select: none;
+
+}
+nav button:hover{
+	background-color: #f0ebe45b;
+	
+}
+.nav-Button-click{
+	transform: scale(0.9);
+	transition: transform 0.02s ease-in-out;
+}
+
+.bookGridContainer{
+	justify-items: center;
+	padding-top: 20px;
+}
+.bookGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 400px;
+    column-gap: 20px;
+	row-gap: 40px;
+	width: 50vw;	
+	/* max-width: 1500px; */
+	padding: 10px;
+	
+	
+}
+/*  */
+.card{
+	align-items: center;
+	justify-items: center;
+	position: relative;
+	
+	border-radius: 10px;
+
+	padding-top: 40px;
+	cursor: pointer;
+
+	width: 260px;
+
+	user-select: none;
+}
+
+.card:hover{
+	background-color: #D8BE99;
+}
+
+.card img{
+	object-fit:cover;
+	width: 100%;
+	height: 75%;
+	
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px #3b3b35;
+}
+
+.card > div {
+	text-align: center;
+	text-transform: capitalize;
+	margin-top: 10px;
+
+	font-size: 1.5rem;
+	font-weight: 500;
+
+}
+
+
+.cardCross{
+	position : absolute;
+	top : 0; 
+	left : 7px;
+	color : #8a8585;
+	visibility: hidden;
+
+	
+	border-radius: 50%;
+}
+
+
+
+.readStatus{
+	position : absolute;
+	top : 2rem; 
+	left : 7px;
+	visibility: hidden;
+	/* align-items: center;
+	justify-items: center; */
+
+
+}
+
+
+.newBookForm{
+
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 5px;
+	/* justify-content: center; */
+	/* align-items: center; */
+
+	visibility:hidden;
+
+	position: absolute; 
+	left: 50%;
+    transform: translate(-50%, -50%);
+
+	top: 50%;
+
+	background-color: #D8BE99;
+
+	padding: 100px 30px;
+
+	font-family: "Montserrat";
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: rgb(0, 0, 0);
+
+	border: 11px double white;
+	border-radius: 10px;
+
+	z-index: 2;
+
+	width: 350px;
+	/* height: 500px; */
+}
+
+.newBookForm p{
+	font-size: 1.5rem;
+}
+
+.newBookForm >input:nth-child(2), .newBookForm > input:nth-child(4){
+	height: 1.7rem;
+	border-radius: 10px;
+	width: 100%;
+
+	font-size: 1.5rem;
+	text-indent: 1rem;
+
+	margin-bottom: 30px;
+
+	background-color: beige;
+}
+
+.newBookForm div:nth-child(5){
+	display: flex;
+	justify-content: center;
+	align-content: center;
+
+	gap:10px;
+	margin-bottom: 30px;
+
+	user-select: none;
+}
+
+.newBookForm > div > input:nth-child(2){
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 2rem;
+	/* font-size: 2rem; */
+	/* line-height: 2rem; */
+}
+
+.newBookForm > div:nth-child(6){
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	
+	
+}
+
+.checkbox{
+	display: flex;
+	align-items: center;
+}
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////CHECKBOX/////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+
+/* The switch - the box around the slider */
+.switch {
+	font-size: 17px;
+	position: relative;
+	display: inline-block;
+	width: 2em;
+	height: 1em;
+}
+
+  /* Hide default HTML checkbox */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+  /* The slider */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	inset: 0;
+	background: #9fccfa;
+	border-radius: 50px;
+	transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 1em;
+	width: 1em;
+	inset: 0;
+	background-color: beige;
+	border-radius: 50px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+	transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.switch input:checked + .slider {
+	background: #0974f1;
+}
+
+.switch input:focus + .slider {
+	box-shadow: 0 0 1px #0974f1;
+}
+
+.switch input:checked + .slider:before {
+	transform: translateX(1em);
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+.newBookForm button{
+	font-size: 1.5rem;
+	font-weight: 600;
+	border-radius: 10px;
+	padding: 0 40px;
+
+	background-color: beige;
+	user-select: none;
+}
+
+.tooltip{
+	font-family: 'Montserrat';
+	position: absolute;
+
+	width: 80px;
+
+	z-index: 4;
+
+	background-color: #d8be9973;
+
+	text-align: center;
+	font-weight: 700;
+
+	border-radius: 5px;
+	padding: 5px 0;
+
+	visibility: hidden;
+}

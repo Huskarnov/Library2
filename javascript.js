@@ -14,11 +14,16 @@ const cancelButton = document.querySelector('.cancelButton');
 
 let myLibrary = [{title:'Woods', image:'https://i.ibb.co/vPXFgCk/4.png', read : true}, {title:'The Whispering Throne', image:'https://i.ibb.co/ncgGhVm/2.png', read : false}, {title:'Hide And Seek', image:'https://i.ibb.co/F05DKH1/3.jpg', read : true}];
 
-function Book(title, image, read){ //construcor
-    this.title = title,
-    this.image = image,
-    this.read = read
+
+
+class Book{ //construcor
+    constructor(title, image, read){
+        this.title = title,
+        this.image = image,
+        this.read = read
+    }
 };
+
 
 function curator(title, image, read){ //construct then push
     let nBook = new Book(title, image, read);
